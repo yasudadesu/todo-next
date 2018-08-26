@@ -9,6 +9,7 @@ export default class TodoList extends React.Component {
         <tr>
           <th>Title</th>
           <th>Discription</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,9 @@ export default class TodoList extends React.Component {
           <tr key={i}>
             <td>{todo.title}</td>
             <td>{todo.discription}</td>
+            <td>
+              <input type="button" value="削除" onClick={() => this.props.handleDelete(i)}/>
+            </td>
           </tr>
           )
         )}

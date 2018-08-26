@@ -6,3 +6,10 @@ export const addTodo = (todo) => ({
     todo
   }
 })
+
+export const deleteTodo = (index) => ({
+  type: actionNameList.deleteTodo,
+  payload: {
+    id: index,
+  }
+})

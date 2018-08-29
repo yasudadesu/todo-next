@@ -43,7 +43,7 @@ const TodoForm = props => {
           disabled={pristine || submitting} />
         <IconLabelButton
           variant="contained"
-          color="default"
+          color="secondary"
           value="クリア"
           iconClassName="delete"
           disabled={pristine || submitting}

@@ -17,10 +17,10 @@ const TodoForm = props => {
         </div>
       </div>
       <div>
-        <label>Todo Discription</label>
+        <label>Todo Description</label>
         <div>
           <Field
-            name="discription"
+            name="description"
             component="input"
             type="text"
             placeholder="説明"

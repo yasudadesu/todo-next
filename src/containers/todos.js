@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addTodo, deleteTodo } from '../actions/todos';
 import TodoForm from './todoForm';
 import TodoList from '../components/todos';
+import Typography from '@material-ui/core/Typography';
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <h2>TodoList</h2>
+        <Typography variant="display3" gutterBottom>TodoList</Typography>
         <TodoForm onSubmit={this.props.addTodo} 
         />
         

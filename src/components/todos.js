@@ -11,6 +11,8 @@ export default class TodoList extends React.Component {
             key={i}
             title={todo.title}
             description={todo.description}
+            handleDelete={this.props.handleDelete}
+            index={i}
             />
         ))}
       </div>

@@ -37,7 +37,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   addTodo: (todo) => {
-    dispatch(addTodo(todo)),
+    dispatch(addTodo(todo))
     dispatch(reset('todo'))  // todoForm.jsで設定した名前
   },
   deleteTodo: (index) =>  dispatch(deleteTodo(index)),

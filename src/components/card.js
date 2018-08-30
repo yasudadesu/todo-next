@@ -15,9 +15,32 @@ const styles = {
     minWidth: 200,
     maxWidth: 300,
   },
+  actions: {
+    display: 'flex',
+  },
 };
 
 class TodoCard extends React.Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      color: 'default',
+    };
+
+    this.handleChangeColor = this.handleChangeColor.bind(this);
+  }
+
+  handleChangeColor() {
+    console.log(this.state.color);
+    if (this.state.color === 'default') {
+      this.setState({color: 'secondary'})
+    }
+    if (this.state.color === 'secondary') {
+      this.setState({color: 'default'})
+    }
+  }
+
   render() {
     const { classes, title, description, handleDelete, index } = this.props;
     return (
@@ -31,7 +54,11 @@ class TodoCard extends React.Component{
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
+            <IconButton
+              aria-label="Add to favorites"
+              onClick={() => this.handleChangeColor()}
+              color={this.state.color}
+            >
               <FavoriteIcon />
             </IconButton>
             <IconButton

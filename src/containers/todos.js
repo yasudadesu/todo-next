@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { reset } from 'redux-form';
 import { addTodo, deleteTodo } from '../actions/todos';
 import TodoForm from './todoForm';
 import TodoList from '../components/todos';
@@ -19,8 +20,7 @@ class TodoApp extends React.Component {
     return (
       <div>
         <Typography variant="display3" gutterBottom>TodoList</Typography>
-        <TodoForm onSubmit={this.props.addTodo} 
-        />
+        <TodoForm onSubmit={this.props.addTodo}/>
         
         <hr />
         <TodoList 
@@ -36,7 +36,10 @@ const mapStateToProps = (state) => ({
   todoList: state.todoList,
 });
 const mapDispatchToProps = (dispatch) => ({
-  addTodo: (todo) => dispatch(addTodo(todo)),
+  addTodo: (todo) => {
+    dispatch(addTodo(todo)),
+    dispatch(reset('todo'))  // todoForm.jsで設定した名前
+  },
   deleteTodo: (index) =>  dispatch(deleteTodo(index)),
 });
 

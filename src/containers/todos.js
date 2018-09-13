@@ -28,8 +28,6 @@ class TodoApp extends React.Component {
           todoList={this.props.todoList} 
           handleDelete={this.handleDelete}
         />
-        <hr />
-        <CanvasApp />
       </div>
     )
   }

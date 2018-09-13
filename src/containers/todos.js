@@ -5,6 +5,7 @@ import { addTodo, deleteTodo } from '../actions/todos';
 import TodoForm from './todoForm';
 import TodoList from '../components/todos';
 import Typography from '@material-ui/core/Typography';
+import CanvasApp from '../components/canvasApp';
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -27,6 +28,8 @@ class TodoApp extends React.Component {
           todoList={this.props.todoList} 
           handleDelete={this.handleDelete}
         />
+        <hr />
+        <CanvasApp />
       </div>
     )
   }
